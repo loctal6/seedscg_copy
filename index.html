@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="icon" type="image/svg+xml" href="seedscg logo (2).svg">
+   <link rel="icon" href="seedscg logo (2).svg">
+<link rel="icon" type="image/svg+xml" href="seedscg logo (2).svg">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Seeds Consulting Group</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;background:#eef2f7}
+
+/* ── BRAND COLORS ──
+   Primary  : Logo green  #2D6A4F  (dark forest green from logo)
+   Accent 1 : Sky blue    #2F88C6
+   Accent 2 : Navy blue   #0B1F3A
+   White    : #ffffff
+*/
+:root{
+  --green:     #2D6A4F;
+  --green-mid: #3A8A65;
+  --green-lt:  #E8F5EE;
+  --green-bdr: #9FD4B8;
+  --sky:       #2F88C6;
+  --sky-lt:    #E6F2FB;
+  --sky-bdr:   #A8D4F0;
+  --navy:      #0B1F3A;
+  --white:     #ffffff;
+  --off:       #F7FAFD;
+  --muted:     #5A6A7E;
+  --border:    #D4E0EB;
+  --gold:      #C8921A;
+}
+
+.page{
+   width:100%;
+   margin:0;
+   background:#fff;
+   box-shadow:0 4px 40px rgba(11,31,58,.1);
+   overflow:hidden
+}
+
+/* ── NAV ── */
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:30}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+/* SVG logo mark approximating Seeds' leaf/seed icon */
+.logo-svg{width:42px;height:42px;flex-shrink:0}
+.logo-text{min-width:0}
+.logo-name{font-size:15px;font-weight:700;color:var(--green);line-height:1.25}
+.logo-sub{font-size:10px;color:var(--muted);letter-spacing:.02em}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links a{font-size:13px;color:var(--muted);cursor:pointer;padding:7px 11px;border-radius:6px;transition:all .15s;text-decoration:none}
+.nav-links a:hover,.nav-links a.active{background:var(--green-lt);color:var(--green)}
+.nav-cta{background:var(--green);color:#fff;border:none;padding:9px 20px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;margin-left:10px;transition:background .15s}
+.nav-cta:hover{background:var(--green-mid)}
+
+/* ── HERO ── */
+.hero{padding:76px 40px 64px;background:#fff;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero-bg{position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,var(--green-lt) 0%,var(--sky-lt) 100%);clip-path:polygon(22% 0,100% 0,100% 100%,0% 100%);opacity:.55;pointer-events:none}
+.hero-tagline-bg{position:absolute;bottom:0;left:0;right:0;padding:14px 40px;background:var(--navy);text-align:center}
+.hero-tagline-bg span{font-style:italic;font-size:14px;color:rgba(255,255,255,.85);letter-spacing:.04em}
+.hero-tagline-bg em{color:var(--sky);font-style:normal;font-weight:600}
+.hero-inner{position:relative;z-index:1;padding-bottom:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.78fr);gap:46px;align-items:center}
+.hero-copy{min-width:0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-lt);color:var(--green);font-size:12px;padding:6px 16px;border-radius:100px;font-weight:600;margin-bottom:22px;border:1px solid var(--green-bdr)}
+.hero-badge .dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:40px;font-weight:700;line-height:1.2;max-width:620px;margin-bottom:16px;color:var(--navy)}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero h1 strong{color:var(--sky);font-weight:700}
+.hero-desc{font-size:15px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:30px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.btn-green{background:var(--green);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-green:hover{background:var(--green-mid)}
+.btn-navy{background:var(--navy);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-navy:hover{background:var(--sky)}
+.btn-outline{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:11px 26px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-outline:hover{border-color:var(--green);color:var(--green)}
+.hero-stats{display:flex;border:1px solid var(--border);border-radius:12px;overflow:hidden;max-width:600px}
+.s-box{flex:1;padding:18px 20px;border-right:1px solid var(--border);background:#fff}
+.s-box:last-child{border-right:none}
+.s-num{font-size:24px;font-weight:700;color:var(--green)}
+.s-lbl{font-size:11px;color:var(--muted);margin-top:3px}
+.hero-visual{min-height:430px;position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.hero-approach{width:min(100%,470px);padding:18px 18px 12px;border-radius:28px;background:rgba(255,255,255,.72);border:1px solid rgba(168,212,240,.55);box-shadow:0 22px 60px rgba(11,31,58,.12);backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.hero-approach::before,.hero-approach::after{content:'';position:absolute;border-radius:50%;pointer-events:none}
+.hero-approach::before{width:220px;height:220px;right:-86px;top:-74px;background:radial-gradient(circle,rgba(45,106,79,.12),transparent 68%)}
+.hero-approach::after{width:180px;height:180px;left:-64px;bottom:-86px;background:radial-gradient(circle,rgba(47,136,198,.12),transparent 68%)}
+.approach-title{font-size:30px;font-weight:800;line-height:1.03;color:var(--navy);margin-bottom:8px}
+.approach-title span{color:var(--green)}
+.approach-rule{width:84px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--sky));margin-bottom:10px}
+.approach-sub{font-size:12px;color:var(--muted);line-height:1.55;max-width:360px;margin-bottom:16px}
+.approach-flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 14px;padding:8px 4px}
+.approach-step{position:relative;z-index:1;text-align:center;animation:heroFloat 6s ease-in-out infinite}
+.approach-step.s2{animation-delay:.4s}.approach-step.s3{animation-delay:.8s}.approach-step.s4{animation-delay:1.2s}
+.approach-step.s5{animation-delay:1.6s}.approach-step.s6{animation-delay:2s}.approach-step.s7{animation-delay:2.4s}.approach-step.s8{animation-delay:2.8s}
+.approach-icon{width:78px;height:78px;border-radius:50%;margin:0 auto 10px;border:2px solid rgba(45,106,79,.35);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(232,245,238,.9));display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 10px 28px rgba(45,106,79,.09)}
+.approach-step.blue .approach-icon{border-color:rgba(47,136,198,.35);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(230,242,251,.92))}
+.approach-glyph{width:40px;height:40px;color:var(--green);display:block}
+.approach-glyph svg{width:100%;height:100%;display:block}
+.approach-glyph svg *{stroke:currentColor}
+.approach-glyph.fill svg *[data-fill]{fill:currentColor;stroke:none}
+.approach-step.blue .approach-glyph{color:var(--sky)}
+.approach-label{font-size:10px;font-weight:800;line-height:1.25;letter-spacing:.02em;color:var(--navy);text-transform:uppercase;max-width:108px;margin:0 auto}
+
+/* ── SECTIONS ── */
+.sec{padding:60px 40px;background:#fff}
+.sec.alt{background:var(--off)}
+.divider{height:1px;background:var(--border)}
+.sec-head{display:flex;gap:16px;margin-bottom:38px;align-items:flex-start}
+.sec-bar{width:4px;min-height:54px;border-radius:4px;background:linear-gradient(180deg,var(--green) 0%,var(--sky) 100%);flex-shrink:0;align-self:stretch}
+.sec-tag{font-size:11px;color:var(--green);font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
+.sec-title{font-size:26px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.sec-sub{font-size:15px;color:var(--muted);max-width:560px;line-height:1.7}
+
+/* ── ABOUT ── */
+.about-2col{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:36px}
+.about-text p{font-size:14px;color:var(--muted);line-height:1.82;margin-bottom:14px}
+.about-text blockquote{border-left:4px solid var(--green);padding:10px 16px;font-style:italic;color:var(--navy);font-size:14px;line-height:1.7;background:var(--green-lt);border-radius:0 8px 8px 0;margin:18px 0}
+.pillars{display:flex;flex-direction:column;gap:12px}
+.pillar{border-left:4px solid var(--sky);border-radius:0 10px 10px 0;padding:16px 20px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--sky)}
+.pillar h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.pillar p{font-size:13px;color:var(--muted);line-height:1.65}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.diff{border:1px solid var(--border);border-radius:10px;padding:20px;background:#fff}
+.diff h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.diff h4 span{width:28px;height:28px;background:var(--green-lt);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+.diff p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* ── FOUNDER ── */
+.founder-wrap{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start}
+.founder-photo-card{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.photo-area{height:340px;background:linear-gradient(160deg,var(--green-lt) 0%,var(--sky-lt) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative}
+.photo-area .initials{width:88px;height:88px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;color:#fff}
+.photo-area p{font-size:12px;color:var(--muted);text-align:center;padding:0 20px;line-height:1.6}
+.photo-area .upload-hint{position:absolute;bottom:14px;font-size:11px;background:rgba(255,255,255,.8);padding:4px 12px;border-radius:100px;color:var(--green);font-weight:600;border:1px solid var(--green-bdr)}
+.photo-foot{padding:14px 16px;border-top:1px solid var(--border);background:#fff}
+.photo-foot strong{font-size:14px;color:var(--navy);display:block}
+.photo-foot span{font-size:11px;color:var(--green);font-weight:600}
+.founder-info h3{font-size:24px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.founder-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.f-badge{font-size:11px;padding:4px 12px;border-radius:100px;font-weight:600;border:1px solid}
+.fb-green{background:var(--green-lt);color:var(--green);border-color:var(--green-bdr)}
+.fb-sky{background:var(--sky-lt);color:var(--sky);border-color:var(--sky-bdr)}
+.fb-navy{background:#e8edf5;color:var(--navy);border-color:#b8c8d8}
+.founder-info p{font-size:14px;color:var(--muted);line-height:1.82;margin-bottom:14px}
+.founder-info blockquote{border-left:4px solid var(--green);padding:10px 16px;font-style:italic;color:var(--navy);font-size:14px;line-height:1.7;background:var(--green-lt);border-radius:0 8px 8px 0;margin:18px 0}
+.exp-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin:18px 0 10px}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.exp-item{font-size:13px;color:#3A4A5E;padding-left:16px;position:relative}
+.exp-item::before{content:'';position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+.founder-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  transition:none;
+  background:#fff;
+}
+
+.photo-area:hover .founder-img{
+  transform:none;
+}
+
+.photo-area{
+  min-height:340px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  background:#fff;
+}
+
+/* ── CONSULTING ── */
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.c-card{border:1px solid var(--border);border-radius:12px;padding:26px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.c-card:hover{border-color:var(--green);box-shadow:0 4px 20px rgba(45,106,79,.1)}
+.c-card.wide{grid-column:1/-1}
+.c-ico{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:15px}
+.ci1{background:var(--green-lt)}.ci2{background:var(--sky-lt)}.ci3{background:#EEF0FF}.ci4{background:#FFF3E8}.ci5{background:#F0FFF4}
+.c-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.c-card p{font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:13px}
+.sub-list{display:flex;flex-direction:column;gap:5px}
+.sub-i{font-size:13px;color:#3A4A5E;padding-left:15px;position:relative}
+.sub-i::before{content:'';position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--sky)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+.tag{font-size:11px;background:var(--sky-lt);color:var(--sky);padding:3px 10px;border-radius:100px;border:1px solid var(--sky-bdr)}
+.tag.g{background:var(--green-lt);color:var(--green);border-color:var(--green-bdr)}
+
+/* ── TRAINING ── */
+.train-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:24px}
+.t-cat{border:1px solid var(--border);border-radius:12px;padding:22px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.t-cat:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(45,106,79,.1)}
+.t-cat.feat{border:2px solid var(--green)}
+.t-icon{width:44px;height:44px;border-radius:10px;background:var(--green-lt);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:13px}
+.t-cat h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pop-pill{background:var(--green-lt);color:var(--green);font-size:10px;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:8px;border:1px solid var(--green-bdr);font-weight:600}
+.t-cat ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.t-cat ul li{font-size:12px;color:var(--muted);padding-left:14px;position:relative;line-height:1.5}
+.t-cat ul li::before{content:'→';position:absolute;left:0;color:var(--green);font-size:10px;top:1px}
+.corp-bar{padding:18px 24px;border:1px solid var(--green-bdr);border-radius:12px;background:var(--green-lt);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.corp-bar p{font-size:15px;font-weight:700;color:var(--navy)}
+.corp-bar span{font-size:13px;color:var(--muted)}
+
+/* ── CASE STUDIES ── */
+.case-list{display:flex;flex-direction:column;gap:13px}
+.case-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;transition:border-color .2s}
+.case-card:hover{border-color:var(--green)}
+.case-hd{padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;cursor:pointer}
+.case-sector{font-size:10px;color:var(--green);font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
+.case-hd h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.case-hd p{font-size:13px;color:var(--muted);line-height:1.55}
+.toggle-btn{font-size:12px;color:var(--sky);cursor:pointer;margin-top:8px;display:inline-flex;align-items:center;gap:5px;font-weight:600;background:none;border:none;padding:0}
+.case-metrics{display:flex;gap:14px;flex-shrink:0}
+.met{text-align:center;min-width:70px}
+.m-n{font-size:22px;font-weight:700;color:var(--green)}
+.m-l{font-size:10px;color:var(--muted);line-height:1.3}
+.case-body{display:none;padding:0 26px 22px;border-top:1px solid var(--border)}
+.case-body.open{display:block}
+.cb-inner{padding-top:18px}
+.cb-inner h4{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em}
+.cb-inner p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.cb-inner blockquote{border-left:4px solid var(--green);padding:12px 16px;background:var(--green-lt);border-radius:0 8px 8px 0;font-style:italic;font-size:13px;color:var(--navy);line-height:1.7;margin:14px 0}
+.methods{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.meth{background:var(--navy);color:#fff;font-size:11px;padding:5px 12px;border-radius:100px;font-weight:500}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.imp{border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;background:var(--off)}
+.i-n{font-size:20px;font-weight:700;color:var(--green);margin-bottom:3px}
+.i-l{font-size:11px;color:var(--muted);line-height:1.35}
+
+/* ── CLIENTS ── */
+.cl-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  max-width:700px;
+  margin:0 auto;
+}
+.cl-tile{border:1px solid var(--border);border-radius:10px;height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:#fff;transition:border-color .2s}
+.cl-tile:hover{border-color:var(--green)}
+.cl-av{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
+.cl-n{font-size:10px;color:var(--muted)}
+.cl-note{font-size:11px;color:#aaa;margin-top:10px;font-style:italic}
+.cl-logo{
+  width:50px;
+  height:50px;
+  object-fit:contain;
+}
+
+.cl-tile{
+  border:1px solid var(--border);
+  border-radius:10px;
+  height:100px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#fff;
+  transition:border-color .2s;
+}
+
+.cl-tile:hover{
+  border-color:var(--green);
+}
+
+.cl-n{
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+}
+/* ── TESTIMONIALS ── */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.t-card{border:1px solid var(--border);border-radius:12px;padding:22px;background:#fff}
+.stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:10px}
+.t-card q{font-size:13px;color:#3A4A5E;line-height:1.76;display:block;margin-bottom:14px}
+.t-auth{display:flex;align-items:center;gap:10px}
+.av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.au-n{font-size:13px;font-weight:700;color:var(--navy)}
+.au-r{font-size:11px;color:var(--muted)}
+
+
+/* ── TWO ROW HORIZONTAL GALLERY ── */
+.gallery-scroll{
+  display:grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 200px);
+  gap:16px;
+  overflow-x:auto;
+  padding-bottom:10px;
+  scroll-behavior:smooth;
+}
+
+.gallery-scroll::-webkit-scrollbar{
+  height:8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb{
+  background:var(--border);
+  border-radius:10px;
+}
+
+.gallery-item{
+  width:280px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:#fff;
+  transition:transform .2s, box-shadow .2s;
+  cursor:pointer;
+  padding:0;
+  appearance:none;
+}
+
+.gallery-item:hover{
+  transform:scale(1.03);
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.gallery-scroll{
+  scroll-snap-type:x mandatory;
+}
+
+.gallery-item{
+  scroll-snap-align:start;
+}
+.gallery-lightbox{position:fixed;inset:0;background:rgba(11,31,58,.82);display:flex;align-items:center;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .22s ease;z-index:120}
+.gallery-lightbox.open{opacity:1;pointer-events:auto}
+.gallery-lightbox-dialog{position:relative;width:min(100%,980px);max-height:min(90vh,820px);background:#08172c;border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:18px;box-shadow:0 24px 80px rgba(0,0,0,.35)}
+.gallery-lightbox-dialog img{width:100%;max-height:calc(90vh - 72px);object-fit:contain;display:block;border-radius:12px;background:#0f223d}
+.gallery-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.gallery-close:hover{background:rgba(255,255,255,.22)}
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:36px}
+#contact{padding-bottom:18px}
+.ci-list{display:flex;flex-direction:column;gap:16px}
+.ci-item{display:flex;gap:13px}
+.ci-ico{width:38px;height:38px;background:var(--green-lt);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:1px solid var(--green-bdr)}
+.ci-item strong{font-size:13px;font-weight:700;color:var(--navy);display:block;margin-bottom:3px}
+.ci-item span{font-size:13px;color:var(--muted);line-height:1.5}
+.c-note{margin-top:8px;padding:16px;border:1px solid var(--sky-bdr);border-radius:10px;background:var(--sky-lt)}
+.c-note p{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.c-note span{font-size:12px;color:var(--muted);line-height:1.65}
+.form{display:flex;flex-direction:column;gap:11px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.ff label{font-size:12px;color:var(--muted);display:block;margin-bottom:4px;font-weight:600}
+.ff label .req{color:var(--green);font-weight:700}
+.ff input,.ff select,.ff textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:10px 13px;font-size:14px;background:#fff;color:var(--navy);font-family:inherit;transition:border-color .15s}
+.ff textarea{height:86px;resize:none}
+.ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(45,106,79,.09)}
+.ff.invalid input,.ff.invalid select,.ff.invalid textarea{border-color:#c44949;box-shadow:0 0 0 3px rgba(196,73,73,.12)}
+.field-error{display:none;font-size:11px;color:#c44949;margin-top:6px;line-height:1.4}
+.ff.invalid .field-error{display:block}
+.s-btn{background:var(--green);color:#fff;border:none;padding:13px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;width:100%;transition:background .15s}
+.s-btn:hover{background:var(--green-mid)}
+.s-btn:disabled{background:#8fb4a1;cursor:not-allowed}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;border:none;padding:12px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;width:100%;margin-top:8px;transition:background .15s}
+.wa-btn:hover{background:#1da851}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy);padding:50px 40px;display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr;gap:32px;width:100%;margin:0}
+.footer h4{font-size:13px;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:14px}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer ul li a{font-size:13px;color:rgba(255,255,255,.5);cursor:pointer;text-decoration:none;transition:color .15s}
+.footer ul li a:hover{color:#fff}
+.f-brand p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;margin-top:12px;max-width:240px}
+.f-tagline{font-style:italic;font-size:13px;color:rgba(47,136,198,.9);margin-top:10px}
+.f-logo{display:flex;align-items:center;gap:11px}
+.f-logo-img{width:34px;height:34px;object-fit:contain;flex-shrink:0}
+.{width:38px;height:38px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;position:relative;overflow:hidden}
+.::after{content:'';position:absolute;bottom:5px;right:5px;width:11px;height:11px;background:rgba(255,255,255,.35);border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
+.f-ln{font-size:14px;font-weight:700;color:#fff}
+.footer-bottom{padding:14px 40px 22px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.3);background:var(--navy);width:100%;margin:0}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  nav{padding:13px 20px;display:grid;grid-template-columns:1fr;align-items:start;gap:12px}
+  .logo-wrap{min-width:0}
+  .logo-svg{width:34px;height:34px}
+  .logo-name{font-size:14px}
+  .logo-sub{font-size:9px;line-height:1.35}
+  .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px}
+  .nav-links a{padding:7px 10px}
+  .nav-cta{margin-left:0}
+  .hero{padding:48px 20px 48px}
+  .hero-inner{grid-template-columns:1fr;gap:26px}
+  .hero h1{font-size:28px}
+  .hero-visual{min-height:320px}
+  .hero-approach{width:min(100%,620px);padding:16px 14px 10px}
+  .approach-title{font-size:26px}
+  .approach-sub{font-size:11px}
+  .approach-flow{gap:18px 10px}
+  .approach-icon{width:68px;height:68px}
+  .approach-glyph{width:34px;height:34px}
+  .approach-label{font-size:9px;max-width:96px}
+  .sec{padding:44px 20px}
+  .about-2col,.c-grid,.diff-grid,.founder-wrap,.contact-grid{grid-template-columns:1fr}
+  .c-card.wide{grid-column:auto}
+  .train-grid{grid-template-columns:1fr 1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .cl-grid{grid-template-columns:repeat(3,1fr)}
+  .test-grid{grid-template-columns:1fr 1fr}
+  .awards-row{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr 1fr;padding:36px 20px}
+  .footer-bottom{padding:13px 20px;flex-direction:column;gap:4px;text-align:center}
+  .frow{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap}
+  .s-box{min-width:50%}
+  .case-metrics{display:none}
+  .hero-tagline-bg{padding:12px 20px}
+  .photo-area{min-height:280px}
+  .gallery-scroll{grid-template-rows:repeat(2,180px)}
+  .gallery-item{width:240px}
+}
+@media(max-width:700px){
+  nav{padding:10px 12px;gap:8px}
+  .logo-wrap{gap:10px}
+  .logo-svg{width:30px;height:30px}
+  .logo-name{font-size:13px}
+  .logo-sub{font-size:8px}
+  .nav-links{display:flex;flex-wrap:wrap;gap:5px;width:100%}
+  .nav-links a{padding:5px 8px;font-size:11px;line-height:1.1}
+  .nav-cta{margin-left:0;padding:7px 12px;font-size:11px;line-height:1.1}
+}
+@media(max-width:520px){
+  nav{padding:8px 10px;gap:6px}
+  .logo-wrap{align-items:flex-start}
+  .logo-text{display:flex;flex-direction:column}
+  .logo-svg{width:26px;height:26px}
+  .logo-name{font-size:11px;line-height:1.15}
+  .logo-sub{font-size:7px;max-width:170px;line-height:1.25}
+  .nav-links{gap:4px}
+  .nav-links a{padding:4px 7px;font-size:10px;border-radius:5px}
+  .nav-cta{padding:6px 10px;font-size:10px;border-radius:6px}
+  .train-grid{grid-template-columns:1fr}
+  .cl-grid{grid-template-columns:repeat(2,1fr)}
+  .footer{grid-template-columns:1fr}
+  .f-logo-img{width:28px;height:28px}
+  .f-logo{gap:8px}
+  .hero-visual{min-height:250px}
+  .hero-approach{padding:14px 12px 10px}
+  .approach-title{font-size:20px}
+  .approach-rule{width:64px}
+  .approach-sub{font-size:10px;margin-bottom:12px}
+  .approach-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px;padding:6px 0 0}
+  .approach-icon{width:62px;height:62px;margin-bottom:8px}
+  .approach-glyph{width:30px;height:30px}
+  .approach-label{font-size:9px;max-width:120px}
+  .photo-area{min-height:220px;padding:10px}
+  .gallery-scroll{grid-template-rows:none;grid-auto-flow:row;grid-template-columns:1fr;overflow-x:visible}
+  .gallery-item{width:100%;height:220px}
+  .gallery-lightbox{padding:16px}
+  .gallery-lightbox-dialog{padding:12px}
+}
+
+/* ══════════════════════════════════════════
+   ANIMATION SYSTEM
+   ══════════════════════════════════════════ */
+
+/* ── Custom cursor ── */
+*{cursor:none!important}
+#cursor-dot{
+  position:fixed;width:6px;height:6px;background:var(--green);border-radius:50%;
+  pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
+}
+#cursor-ring{
+  position:fixed;width:26px;height:26px;border:1.5px solid var(--green);border-radius:50%;
+  pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+  opacity:0.5;
+  transition:width .15s ease,height .15s ease,opacity .15s ease,border-color .15s ease;
+}
+#cursor-dot.hovered{background:var(--sky)}
+#cursor-ring.hovered{width:38px;height:38px;border-color:var(--sky);opacity:0.3}
+#cursor-trail{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997}
+
+/* ── Scroll-reveal base ── */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{
+  opacity:0;transform:translateX(-40px);
+  transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);
+}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{
+  opacity:0;transform:translateX(40px);
+  transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);
+}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{
+  opacity:0;transform:scale(.92);
+  transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);
+}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* stagger delays */
+.stagger-1{transition-delay:.08s}
+.stagger-2{transition-delay:.16s}
+.stagger-3{transition-delay:.24s}
+.stagger-4{transition-delay:.32s}
+.stagger-5{transition-delay:.40s}
+.stagger-6{transition-delay:.48s}
+
+/* ── Hero animations ── */
+@keyframes heroSlideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroBgFloat{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.04) rotate(1deg)}}
+@keyframes statCount{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes heroSpin{to{transform:rotate(360deg)}}
+@keyframes heroCorePulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.06)}}
+@keyframes heroDotDrift{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-14px) scale(1.18)}}
+@keyframes heroLinePulse{0%,100%{opacity:.18;transform:scaleX(.72)}50%{opacity:.7;transform:scaleX(1)}}
+.hero-badge{animation:heroSlideUp .6s .1s both}
+.hero h1{animation:heroSlideUp .65s .2s both}
+.hero-desc{animation:heroSlideUp .65s .35s both}
+.hero-btns{animation:heroSlideUp .65s .45s both}
+.hero-stats{animation:heroSlideUp .65s .55s both}
+.hero-visual{animation:heroSlideUp .65s .5s both}
+.hero-bg{animation:heroBgFloat 8s ease-in-out infinite}
+.hero-tagline-bg{animation:heroSlideUp .65s .65s both}
+
+/* ── Nav animation ── */
+@keyframes navSlideDown{from{opacity:0;transform:translateY(-100%)}to{opacity:1;transform:translateY(0)}}
+nav{animation:navSlideDown .5s .05s both}
+
+/* ── Floating decorative dots ── */
+@keyframes floatDot{0%,100%{transform:translateY(0) scale(1);opacity:.4}50%{transform:translateY(-18px) scale(1.2);opacity:.8}}
+.hero::after{
+  content:'';position:absolute;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,.12) 0%,transparent 70%);
+  top:-60px;right:80px;pointer-events:none;
+  animation:floatDot 7s ease-in-out infinite;
+}
+
+/* ── Sec-bar line grow ── */
+@keyframes barGrow{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1);transform-origin:top}}
+.sec-bar{animation:barGrow .5s .1s both}
+
+/* ── Card hover lift ── */
+.c-card,.t-cat,.res-card,.diff,.pillar,.case-card,.t-card{
+  transition:border-color .2s,box-shadow .25s,transform .25s;
+}
+.c-card:hover,.t-cat:hover,.res-card:hover,.diff:hover,.pillar:hover,.t-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 28px rgba(45,106,79,.13);
+}
+.case-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(45,106,79,.1)}
+
+/* ── Stat number count-up flash ── */
+@keyframes countFlash{0%{color:var(--navy)}50%{color:var(--green)}100%{color:var(--green)}}
+.s-num.counting{animation:countFlash .6s forwards}
+
+/* ── Button micro-interactions ── */
+.btn-green,.btn-navy,.btn-outline,.nav-cta,.s-btn,.wa-btn,.res-btn{
+  transition:all .2s cubic-bezier(.34,1.56,.64,1);
+}
+.btn-green:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 6px 18px rgba(45,106,79,.3)}
+.btn-navy:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 6px 18px rgba(11,31,58,.3)}
+.btn-outline:hover{transform:translateY(-2px) scale(1.02)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,106,79,.25)}
+
+/* ── Footer link hover ── */
+.footer ul li a{transition:color .15s,letter-spacing .15s}
+.footer ul li a:hover{letter-spacing:.02em}
+
+/* ── Section tag pulse ── */
+@keyframes tagPop{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+.sec-tag:hover{animation:tagPop .3s ease}
+
+/* ── Input focus glow ── */
+.ff input,.ff select,.ff textarea{transition:border-color .2s,box-shadow .2s,transform .15s}
+.ff input:focus,.ff select:focus,.ff textarea:focus{transform:translateY(-1px)}
+
+/* ════════════════════════════════
+   CLIENTS — INFINITE MARQUEE
+   ════════════════════════════════ */
+.clients-marquee-wrap{
+  overflow:hidden;
+  position:relative;
+  padding:16px 0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+}
+.clients-marquee-track{
+  display:flex;
+  gap:20px;
+  width:max-content;
+  animation:marqueeScroll 22s linear infinite;
+}
+.clients-marquee-wrap:hover .clients-marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.cl-tile-m{
+  flex-shrink:0;
+  border:1px solid var(--border);border-radius:12px;
+  width:160px;height:100px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:#fff;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+}
+.cl-tile-m:hover{
+  border-color:var(--green);
+  box-shadow:0 6px 20px rgba(45,106,79,.15);
+  transform:translateY(-4px) scale(1.04);
+}
+.cl-tile-m .cl-logo{width:54px;height:54px;object-fit:contain}
+.cl-tile-m .cl-n{font-size:11px;color:var(--muted);text-align:center;font-weight:500}
+</style>
+</head>
+<body>
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="cursor-trail"></canvas>
+
+<div class="page" id="top">
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="logo-wrap">
+    <!-- SVG approximating Seeds' green leaf/seed logo mark -->
+    <img src="seedscg logo (1).svg" class="logo-svg" alt="Seeds Consulting Group Logo">
+      <rect width="42" height="42" rx="8" fill="#2D6A4F"/>
+      <!-- Leaf/seed shape -->
+      <ellipse cx="21" cy="18" rx="9" ry="12" fill="#fff" opacity=".9" transform="rotate(-15 21 18)"/>
+      <ellipse cx="21" cy="18" rx="5" ry="8" fill="#2D6A4F" transform="rotate(-15 21 18)"/>
+      <!-- Stem -->
+      <line x1="21" y1="28" x2="21" y2="35" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <!-- Gold dot accent -->
+      <circle cx="32" cy="10" r="4" fill="#C8921A" opacity=".9"/>
+    </svg>
+    <div class="logo-text">
+      <div class="logo-name">Seeds Consulting Group</div>
+      <div class="logo-sub">Lean Six Sigma · Consulting · Leadership Development</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a onclick="goTo('about')">About</a>
+    <a onclick="goTo('consulting')">Consulting</a>
+    <a onclick="goTo('training')">Training</a>
+    <a onclick="goTo('casestudies')">Case Studies</a>
+    <a onclick="goTo('clients')">Clients</a>
+    <a onclick="goTo('gallery')">Gallery</a>
+    <button class="nav-cta" onclick="goTo('contact')">Book a Call</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-badge"><span class="dot"></span>Lean Six Sigma · Process Excellence · 22+ Years</div>
+      <h1>Closing the gap between<br><em>great processes</em> and <strong>great people</strong></h1>
+      <p class="hero-desc">Seeds Consulting Group integrates process excellence with human capability — building organisations that don't just improve, but sustain that improvement from the inside out.</p>
+      <div class="hero-btns">
+        <button class="btn-green" onclick="goTo('contact')">Book a Free Discovery Call</button>
+        <button class="btn-outline" onclick="goTo('casestudies')">View Our Work ↓</button>
+      </div>
+      <div class="hero-stats">
+        <div class="s-box reveal stagger-1"><div class="s-num">22+</div><div class="s-lbl">Years experience</div></div>
+        <div class="s-box reveal stagger-2"><div class="s-num">2000+</div><div class="s-lbl">Professionals trained</div></div>
+        <div class="s-box reveal stagger-3" style="border-right:none"><div class="s-num">40+</div><div class="s-lbl">Client engagements</div></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-approach">
+        <div class="approach-title">Our Approach. <span>Your Growth.</span></div>
+        <div class="approach-rule"></div>
+        <div class="approach-sub">A proven, end-to-end path that builds capability, improves performance, and creates sustainable results.</div>
+        <div class="approach-flow">
+          <div class="approach-step s1">
+            <div class="approach-icon"><div class="approach-glyph fill"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="5" data-fill/><circle cx="32" cy="16" r="5" data-fill opacity=".85"/><path d="M10 38v-8a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v8" stroke-width="3" stroke-linecap="round"/><path d="M26 38v-8a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v8" stroke-width="3" stroke-linecap="round"/></svg></div></div>
+            <div class="approach-label">Leadership Development</div>
+          </div>
+          <div class="approach-step s2">
+            <div class="approach-icon"><div class="approach-glyph fill"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 14h20a6 6 0 0 1 6 6v4a6 6 0 0 1-6 6H24l-7 6v-6h-3a6 6 0 0 1-6-6v-4a6 6 0 0 1 6-6Z" stroke-width="3" stroke-linejoin="round"/><circle cx="18" cy="22" r="2.5" data-fill/><circle cx="24" cy="22" r="2.5" data-fill/><circle cx="30" cy="22" r="2.5" data-fill/></svg></div></div>
+            <div class="approach-label">Soft Skills</div>
+          </div>
+          <div class="approach-step s3">
+            <div class="approach-icon"><div class="approach-glyph"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="15" stroke-width="3"/><circle cx="24" cy="24" r="9" stroke-width="3"/><circle cx="24" cy="24" r="3" stroke-width="3"/><path d="M24 24 38 12" stroke-width="3" stroke-linecap="round"/><path d="m32 12 6 0 0 6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="approach-label">Lean Six Sigma</div>
+          </div>
+          <div class="approach-step s4">
+            <div class="approach-icon"><div class="approach-glyph"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8c6 4 11 5 14 5v10c0 9-5.5 14.5-14 18-8.5-3.5-14-9-14-18V13c3 0 8-1 14-5Z" stroke-width="3" stroke-linejoin="round"/><path d="m18 24 4 4 8-10" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="approach-label">Reliability</div>
+          </div>
+          <div class="approach-step s5">
+            <div class="approach-icon"><div class="approach-glyph fill"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="10" y="28" width="5" height="10" rx="1" data-fill/><rect x="19" y="22" width="5" height="16" rx="1" data-fill opacity=".9"/><rect x="28" y="16" width="5" height="22" rx="1" data-fill opacity=".8"/><path d="M11 18c8 1 13-2 18-8" stroke-width="3" stroke-linecap="round"/><path d="m26 10 5 0 0 5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="approach-label">Process Improvement</div>
+          </div>
+          <div class="approach-step s6">
+            <div class="approach-icon"><div class="approach-glyph"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="11" y="10" width="26" height="30" rx="3" stroke-width="3"/><rect x="18" y="6" width="12" height="7" rx="2" stroke-width="3"/><path d="m18 20 4 4" stroke-width="3" stroke-linecap="round"/><path d="m22 20-4 4" stroke-width="3" stroke-linecap="round"/><path d="m27 30 3 3 6-8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="approach-label">Project Management</div>
+          </div>
+          <div class="approach-step s7 blue">
+            <div class="approach-icon"><div class="approach-glyph"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="15" cy="18" r="4" stroke-width="3"/><path d="M15 24v11" stroke-width="3" stroke-linecap="round"/><path d="M23 15h13v11H23" stroke-width="3" stroke-linejoin="round"/><path d="m26 23 3-3 3 2 4-5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 34h15" stroke-width="3" stroke-linecap="round"/></svg></div></div>
+            <div class="approach-label">Training & Development</div>
+          </div>
+          <div class="approach-step s8 blue">
+            <div class="approach-icon"><div class="approach-glyph"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 27c3-4 6-6 10-6s7 2 10 6" stroke-width="3" stroke-linecap="round"/><path d="m13 25-5-5" stroke-width="3" stroke-linecap="round"/><path d="m35 25 5-5" stroke-width="3" stroke-linecap="round"/><path d="m20 25 4 4 4-4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 31c3 3 5 4 8 4s5-1 8-4" stroke-width="3" stroke-linecap="round"/></svg></div></div>
+            <div class="approach-label">Sustainable Growth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-tagline-bg"><span>"Chase Perfection… Attain <em>Excellence</em>"</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ ABOUT ══ -->
+<div class="sec" id="about">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Our Story</div>
+      <div class="sec-title">Where Seeds Consulting began</div>
+      <div class="sec-sub">Built on a conviction that most organisations are solving only half the problem.</div>
+    </div>
+  </div>
+  <div class="about-2col">
+    <div class="about-text reveal-left">
+      <p>For decades, businesses have invested in either process improvement methodologies or people development — rarely both, and almost never in an integrated way. The result? Lean Six Sigma projects that fail to sustain. Leadership programs that never connect to business outcomes.</p>
+      <p>Seeds was created to close that gap. We don't parachute in, deliver a program, and leave. We plant capabilities that take root within the organisation, grow over time, and eventually thrive without us.</p>
+      <blockquote>"Sustainable transformation isn't about the solution you provide — it's about the capability you leave behind."</blockquote>
+      <p>Built on over 22 years of hands-on industry experience, every engagement is anchored in real-world business outcomes. Every program is designed to be applied, not archived.</p>
+    </div>
+    <div class="pillars reveal-right">
+      <div class="pillar">
+        <h4>Lean Six Sigma Training & Certification</h4>
+        <p>Green Belt and Black Belt programs built around real project execution. Participants apply tools to live business problems under expert guidance — certification backed by demonstrable impact.</p>
+      </div>
+      <div class="pillar">
+        <h4>Consulting & Process Excellence</h4>
+        <p>End-to-end engagements focused on operational efficiency, quality improvement, and structured problem-solving — eliminating waste and building measurable ROI.</p>
+      </div>
+      <div class="pillar">
+        <h4>Soft Skills & Leadership Development</h4>
+        <p>Communication, leadership presence, and team effectiveness programs for working professionals — because even the most rigorous process fails without the right people driving it.</p>
+      </div>
+    </div>
+  </div>
+  <div class="diff-grid reveal">
+    <div class="diff"><h4><span>🔗</span>Process + People, Together</h4><p>We are one of the very few firms that treats these as inseparable — not complementary add-ons. Without capable people, even the best processes collapse.</p></div>
+    <div class="diff"><h4><span>🏭</span>Practitioner-led, not Classroom-driven</h4><p>Programs delivered by professionals who have led real transformations inside real organisations — not by trainers who've only ever taught.</p></div>
+    <div class="diff"><h4><span>🌱</span>Capability Over Dependency</h4><p>We measure success by how little our clients need us over time. Our goal is to build internal champions who sustain and lead improvement independently.</p></div>
+    <div class="diff"><h4><span>📈</span>Measurable Business Outcomes</h4><p>Every engagement is anchored to outcomes that show up in business performance — cost reduction, quality improvement, leadership effectiveness.</p></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ FOUNDER ══ -->
+<div class="sec alt" id="founder">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">The Founder</div>
+      <div class="sec-title">About Raghuram K</div>
+      <div class="sec-sub">Lean Six Sigma Master Black Belt with 22+ years of hands-on industry experience.</div>
+    </div>
+  </div>
+  <div class="founder-wrap reveal">
+    <div class="founder-photo-card">
+      <div class="photo-area">
+        <img src="images/founder.JPG" alt="Raghuram K" class="founder-img">
+      </div>
+      <div class="photo-foot">
+        <strong>Raghuram K</strong>
+        <span>Founder & Lead Consultant</span>
+      </div>
+    </div>
+    <div class="founder-info">
+      <h3>Raghuram K</h3>
+      <div class="founder-badge-row">
+        <span class="f-badge fb-green">Lean Six Sigma Master Black Belt</span>
+        <span class="f-badge fb-sky">22+ Years Industry Experience</span>
+        <span class="f-badge fb-navy">Founder & Lead Consultant</span>
+      </div>
+      <p>Raghuram K is a Lean Six Sigma Master Black Belt with over 22 years of hands-on experience in process excellence, operational transformation, and professional capability building. He has worked across manufacturing, engineering, and IT services — leading improvement programs, coaching teams, and building internal quality cultures from the ground up.</p>
+      <p>What distinguishes Raghu from most consultants is the depth of his industry experience. He hasn't just taught Lean Six Sigma — he has driven it inside complex, high-stakes organisations. That practitioner's perspective shapes every training program, every consulting engagement, and every conversation he has with clients.</p>
+      <blockquote>"My work is not about giving people a certificate. It's about changing how they think about problems — and giving them the tools and confidence to solve them."</blockquote>
+      <p>Raghu founded Seeds Consulting Group with a clear intent: to deliver the kind of integrated, practical, and lasting impact that most firms simply can't. His philosophy — that tools alone don't create impact, but people who know how to use them do — runs through every service Seeds offers.</p>
+      <div class="exp-label">Core Expertise</div>
+      <div class="exp-grid">
+        <div class="exp-item">Lean Six Sigma training & certification</div>
+        <div class="exp-item">Process improvement & operational consulting</div>
+        <div class="exp-item">Large-scale organisational transformation</div>
+        <div class="exp-item">Leadership & behavioural development</div>
+        <div class="exp-item">Structured problem-solving & execution</div>
+        <div class="exp-item">Project management</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ CONSULTING ══ -->
+<div class="sec" id="consulting">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Consulting Services</div>
+      <div class="sec-title">Business consulting</div>
+      <div class="sec-sub">Strategic and operational consulting across five pillars — helping organisations build lasting competitive advantage.</div>
+    </div>
+  </div>
+  <div class="c-grid reveal">
+    <div class="c-card">
+      <div class="c-ico ci1">⚙️</div>
+      <h3>Operations excellence</h3>
+      <p>Streamline processes, eliminate waste, and improve throughput with proven lean methodologies.</p>
+      <div class="sub-list">
+        <div class="sub-i">Process mapping & value stream analysis</div>
+        <div class="sub-i">Waste reduction (TIMWOOD)</div>
+        <div class="sub-i">Kaizen & continuous improvement</div>
+        <div class="sub-i">KPI design & performance systems</div>
+      </div>
+      <div class="tags"><span class="tag g">Lean</span><span class="tag g">Kaizen</span><span class="tag g">VSM</span><span class="tag g">5S</span></div>
+    </div>
+    <div class="c-card">
+      <div class="c-ico ci2">🎯</div>
+      <h3>Strategic excellence</h3>
+      <p>Set the right direction with structured goal-setting frameworks and strategic execution tools.</p>
+      <div class="sub-list">
+        <div class="sub-i">Business goal setting & OKRs</div>
+        <div class="sub-i">Hoshin Kanri strategic planning</div>
+        <div class="sub-i">Competitive positioning</div>
+        <div class="sub-i">Strategic review cadences</div>
+      </div>
+      <div class="tags"><span class="tag">OKRs</span><span class="tag">Hoshin</span><span class="tag">Balanced Scorecard</span></div>
+    </div>
+    <div class="c-card">
+      <div class="c-ico ci3">📐</div>
+      <h3>Design excellence</h3>
+      <p>Build products and services that delight customers through design thinking and DFSS principles.</p>
+      <div class="sub-list">
+        <div class="sub-i">Design for Six Sigma (DFSS)</div>
+        <div class="sub-i">DMADV methodology</div>
+        <div class="sub-i">Customer VOC & CTQ analysis</div>
+        <div class="sub-i">New product / service development</div>
+      </div>
+      <div class="tags"><span class="tag">DFSS</span><span class="tag">DMADV</span><span class="tag">VOC</span></div>
+    </div>
+    <div class="c-card">
+      <div class="c-ico ci4">👥</div>
+      <h3>People excellence</h3>
+      <p>Develop high-performing teams through coaching, culture transformation, and skill development.</p>
+      <div class="sub-list">
+        <div class="sub-i">Leadership coaching & mentoring</div>
+        <div class="sub-i">Team skill gap analysis</div>
+        <div class="sub-i">Culture & change management</div>
+        <div class="sub-i">Performance enablement systems</div>
+      </div>
+      <div class="tags"><span class="tag">Coaching</span><span class="tag">Change Mgmt</span><span class="tag">Culture</span></div>
+    </div>
+    <div class="c-card wide">
+      <div style="display:flex;gap:24px;align-items:flex-start">
+        <div class="c-ico ci5" style="flex-shrink:0">📋</div>
+        <div style="flex:1">
+          <h3>Project management</h3>
+          <p>Structured project execution frameworks for on-time, on-budget delivery. We train teams and embed PM disciplines that stick — integrated with Lean Six Sigma for end-to-end impact.</p>
+          <div class="sub-list" style="display:grid;grid-template-columns:1fr 1fr;gap:5px">
+            <div class="sub-i">Project planning & scheduling</div>
+            <div class="sub-i">Risk identification & mitigation</div>
+            <div class="sub-i">Stakeholder communication frameworks</div>
+            <div class="sub-i">Execution tracking & governance</div>
+          </div>
+          <div class="tags"><span class="tag">PMP aligned</span><span class="tag">Agile</span><span class="tag">PMBOK</span><span class="tag">Risk Management</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ TRAINING ══ -->
+<div class="sec alt" id="training">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Training & Development</div>
+      <div class="sec-title">Certification programs & courses</div>
+      <div class="sec-sub">Hands-on programs for individuals and corporate teams — IASSC-aligned, delivered by a certified Master Black Belt. All programs are customisable in duration and depth based on client needs.</div>
+    </div>
+  </div>
+  <div class="train-grid reveal">
+    <div class="t-cat feat">
+      <div class="pop-pill">Core offering</div>
+      <div class="t-icon">🏆</div>
+      <h3>Lean Six Sigma</h3>
+      <ul>
+        <li>Yellow Belt</li>
+        <li>Green Belt</li>
+        <li>Black Belt</li>
+        <li>Master Black Belt coaching</li>
+      </ul>
+    </div>
+    <div class="t-cat">
+      <div class="t-icon">🔧</div>
+      <h3>Quality tools</h3>
+      <ul>
+        <li>DMAIC & DMADV</li>
+        <li>SPC & Control Charts</li>
+        <li>MSA / Gauge R&R</li>
+        <li>Process Capability (Cpk/Ppk)</li>
+        <li>FMEA</li>
+      </ul>
+    </div>
+    <div class="t-cat">
+      <div class="t-icon">📊</div>
+      <h3>Reliability & statistics</h3>
+      <ul>
+        <li>Root Cause Analysis</li>
+        <li>Design of Experiments (DOE)</li>
+        <li>Hypothesis Testing</li>
+        <li>Regression & Modelling</li>
+        <li>Monte Carlo Simulation</li>
+      </ul>
+    </div>
+    <div class="t-cat">
+      <div class="t-icon">🎤</div>
+      <h3>Soft skills & leadership</h3>
+      <ul>
+        <li>Communication & leadership presence</li>
+        <li>Team effectiveness</li>
+        <li>Behavioural transformation</li>
+        <li>Problem-solving mindset</li>
+        <li>Manager effectiveness</li>
+      </ul>
+    </div>
+  </div>
+  <div class="corp-bar">
+    <div>
+      <p>Need a corporate batch or custom program?</p>
+      <span>All programs tailored to context · On-site delivery across India · GST invoicing available</span>
+    </div>
+    <button class="btn-green" onclick="goTo('contact')">Get a custom quote →</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ CASE STUDIES ══ -->
+<div class="sec alt" id="casestudies">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Our Work</div>
+      <div class="sec-title">Case studies</div>
+      <div class="sec-sub">Real, data-driven transformations across manufacturing, pharma, IT services, and healthcare. Click any case to read the full methodology and impact.</div>
+    </div>
+  </div>
+  <div class="case-list reveal">
+
+    <div class="case-card">
+      <div class="case-hd" onclick="toggleCase('c1')">
+        <div style="flex:1">
+          <div class="case-sector">Manufacturing · Auto Components</div>
+          <h3>Eliminating chronic production losses in a high-volume auto components plant</h3>
+          <p>OEE plateaued at 62% for 18 months. A multi-factor DOE revealed what 30+ internal action plans couldn't.</p>
+          <button class="toggle-btn" id="c1-btn">Read full case study ↓</button>
+        </div>
+        <div class="case-metrics">
+          <div class="met"><div class="m-n">+19pp</div><div class="m-l">OEE<br>62%→81%</div></div>
+          <div class="met"><div class="m-n">67%</div><div class="m-l">Rejection<br>rate drop</div></div>
+          <div class="met"><div class="m-n">₹1.4Cr</div><div class="m-l">Annual<br>savings</div></div>
+        </div>
+      </div>
+      <div class="case-body" id="c1">
+        <div class="cb-inner">
+          <h4>The Challenge</h4>
+          <p>Line rejections running at 4.8%, unplanned downtime consuming two full shifts per week. Internal teams generated 30+ suspected causes but without a structured framework, every corrective action was a gamble. The real problem was multi-source variation — multi-factor, poorly decomposed, and never scientifically interrogated.</p>
+          <h4 style="margin-top:14px">Methodology</h4>
+          <div class="methods"><span class="meth">Measure & Stratify</span><span class="meth">Multi-vari Analysis</span><span class="meth">Hypothesis Testing</span><span class="meth">Two-way ANOVA</span><span class="meth">Full Factorial DOE</span><span class="meth">SPC + Cpk Control</span></div>
+          <p>Multi-vari analysis showed 68% of variation was temporal (shift-specific). Two-way ANOVA found a significant interaction effect (p=0.003) between warm-up temperature and material hardness — invisible to any single-factor analysis. Full factorial DOE identified an optimal combination reducing defect rate to 0.9% — a 5× improvement. Cpk improved from 0.91 to 1.67.</p>
+          <blockquote>"We had been changing one thing at a time for over a year. The DOE showed us in three weeks that the interaction between material hardness and warm-up time was the real culprit — something no single-factor experiment could ever have found." — General Manager, Operations</blockquote>
+          <h4 style="margin-top:14px">Measured Impact — 6 Months Post-Engagement</h4>
+          <div class="impact-grid">
+            <div class="imp"><div class="i-n">+19pp</div><div class="i-l">OEE: 62%→81%</div></div>
+            <div class="imp"><div class="i-n">67%</div><div class="i-l">Rejection rate drop (4.8%→1.6%)</div></div>
+            <div class="imp"><div class="i-n">Cpk 1.67</div><div class="i-l">vs 0.91 baseline</div></div>
+            <div class="imp"><div class="i-n">₹1.4Cr</div><div class="i-l">Annualised savings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-hd" onclick="toggleCase('c2')">
+        <div style="flex:1">
+          <div class="case-sector">Pharmaceuticals · Batch Manufacturing</div>
+          <h3>From recurring deviations to predictive quality control — MSA, Capability & Monte Carlo</h3>
+          <p>A 40% rise in batch deviations over two years. MSA revealed the measurement systems themselves were part of the problem.</p>
+          <button class="toggle-btn" id="c2-btn">Read full case study ↓</button>
+        </div>
+        <div class="case-metrics">
+          <div class="met"><div class="m-n">58%</div><div class="m-l">Batch deviation<br>drop</div></div>
+          <div class="met"><div class="m-n">3×</div><div class="m-l">Faster CAPA<br>closure</div></div>
+          <div class="met"><div class="m-n">Zero</div><div class="m-l">Critical<br>audit findings</div></div>
+        </div>
+      </div>
+      <div class="case-body" id="c2">
+        <div class="cb-inner">
+          <h4>The Challenge</h4>
+          <p>CAPA cycles were running on time but deviations kept recurring. No one had validated whether the measurement instruments used for batch release were reliable. In a GMP environment, an unreliable measurement system produces false conformances and false rejections with equal efficiency — and no one can tell the difference.</p>
+          <h4 style="margin-top:14px">Methodology</h4>
+          <div class="methods"><span class="meth">Batch Record Audit</span><span class="meth">MSA / Gauge R&R</span><span class="meth">Process Capability (Ppk)</span><span class="meth">Logistic Regression</span><span class="meth">Monte Carlo Simulation</span><span class="meth">Supervisor Development</span></div>
+          <p>Gauge R&R found two instruments with %R&R >30% — unacceptable for batch release. Capability study revealed 4 of 9 critical parameters had Ppk &lt;1.0 — deviations were statistically inevitable, not exceptional. Monte Carlo simulation showed tightening humidity controls alone reduced predicted deviation probability from 18.4% to 6.1% — quantified before a single rupee was spent.</p>
+          <blockquote>"The Gauge R&R result was genuinely shocking. We had been making batch release decisions on instruments we thought were fine. The MSA showed us we had a measurement problem before we even had a process problem." — Head of Quality Assurance</blockquote>
+          <h4 style="margin-top:14px">Measured Impact — 9 Months Post-Engagement</h4>
+          <div class="impact-grid">
+            <div class="imp"><div class="i-n">58%</div><div class="i-l">Batch deviation drop</div></div>
+            <div class="imp"><div class="i-n">Ppk 1.42</div><div class="i-l">vs 0.87 baseline</div></div>
+            <div class="imp"><div class="i-n">3×</div><div class="i-l">Faster CAPA closure</div></div>
+            <div class="imp"><div class="i-n">Zero</div><div class="i-l">Critical regulatory findings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-hd" onclick="toggleCase('c3')">
+        <div style="flex:1">
+          <div class="case-sector">IT Services · Delivery Operations</div>
+          <h3>Making delivery predictable — regression-based early warning & Monte Carlo risk modelling</h3>
+          <p>18% SLA breach rate. Two years of unused project data converted into a predictive model with R²=0.79.</p>
+          <button class="toggle-btn" id="c3-btn">Read full case study ↓</button>
+        </div>
+        <div class="case-metrics">
+          <div class="met"><div class="m-n">−72%</div><div class="m-l">SLA breach<br>18%→5%</div></div>
+          <div class="met"><div class="m-n">R²=0.79</div><div class="m-l">Predictive<br>accuracy</div></div>
+          <div class="met"><div class="m-n">−34%</div><div class="m-l">Client<br>escalations</div></div>
+        </div>
+      </div>
+      <div class="case-body" id="c3">
+        <div class="cb-inner">
+          <h4>The Challenge</h4>
+          <p>SLA breaches rising, client escalations at board level, and no one could predict which projects would fail before they failed. Two years of project data existed but had never been used analytically. The gap wasn't data — it was the capability to convert data into decisions.</p>
+          <h4 style="margin-top:14px">Methodology</h4>
+          <div class="methods"><span class="meth">Value Stream Mapping</span><span class="meth">Correlation Analysis</span><span class="meth">Hypothesis Testing</span><span class="meth">Multiple Regression</span><span class="meth">Monte Carlo Simulation</span><span class="meth">Leadership Program</span></div>
+          <p>Projects with 4+ handoffs breached SLA at 31% vs 7% for simpler structures (p&lt;0.001). Multiple regression built a model (R²=0.79) giving managers an early warning 3–4 weeks before a breach would otherwise be visible. Monte Carlo showed reducing handoffs from 4 to 2 increased P80 on-time delivery from 51% to 83%.</p>
+          <blockquote>"The regression model gave our managers something they had never had — an objective signal, not a feeling. That one shift changed everything downstream." — VP Delivery</blockquote>
+          <h4 style="margin-top:14px">Measured Impact — 8 Months Post-Engagement</h4>
+          <div class="impact-grid">
+            <div class="imp"><div class="i-n">−72%</div><div class="i-l">SLA breach rate</div></div>
+            <div class="imp"><div class="i-n">+32pp</div><div class="i-l">P80 on-time delivery</div></div>
+            <div class="imp"><div class="i-n">−34%</div><div class="i-l">Client escalations</div></div>
+            <div class="imp"><div class="i-n">R²=0.79</div><div class="i-l">Model accuracy</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-hd" onclick="toggleCase('c4')">
+        <div style="flex:1">
+          <div class="case-sector">Healthcare · Multi-Specialty Hospital</div>
+          <h3>Reducing patient discharge delays and adverse event risk at a 400-bed hospital</h3>
+          <p>3.2 hours of daily bed loss and rising medication near-misses — traced to one shared root cause.</p>
+          <button class="toggle-btn" id="c4-btn">Read full case study ↓</button>
+        </div>
+        <div class="case-metrics">
+          <div class="met"><div class="m-n">52%</div><div class="m-l">Faster discharge<br>4.8→2.3hrs</div></div>
+          <div class="met"><div class="m-n">+18</div><div class="m-l">Beds recovered<br>daily</div></div>
+          <div class="met"><div class="m-n">67%</div><div class="m-l">Near-miss<br>events drop</div></div>
+        </div>
+      </div>
+      <div class="case-body" id="c4">
+        <div class="cb-inner">
+          <h4>The Challenge</h4>
+          <p>A 400-bed hospital losing 3.2 hours per bed per day to discharge delays while managing a slow rise in medication near-misses. Leadership had treated these as two separate problems — they were not. Both shared a common upstream cause in informal, undocumented shift handovers.</p>
+          <h4 style="margin-top:14px">Methodology</h4>
+          <div class="methods"><span class="meth">Patient Flow Mapping (VSM)</span><span class="meth">Pareto & Stratification</span><span class="meth">FMEA (Clinical Risk)</span><span class="meth">Hypothesis Testing</span><span class="meth">Regression Analysis</span><span class="meth">SPC + Staff Development</span></div>
+          <p>Of the average 4.8-hour discharge time, only 38 minutes was value-adding. Pareto showed 74% of delays came from just two steps — both peaking in the morning changeover window responsible for 81% of medication near-misses. FMEA identified RPN of 420 on missed medication reconciliation (threshold 200), reduced to 85 post-implementation.</p>
+          <blockquote>"Seeds showed us — with data — that the discharge problem and the medication safety problem had the same root cause. That insight aligned the entire leadership team around one solution instead of two competing initiatives." — Chief Operating Officer</blockquote>
+          <h4 style="margin-top:14px">Measured Impact — 8 Months Post-Engagement</h4>
+          <div class="impact-grid">
+            <div class="imp"><div class="i-n">52%</div><div class="i-l">Faster discharge time</div></div>
+            <div class="imp"><div class="i-n">+18 beds</div><div class="i-l">Daily capacity recovered</div></div>
+            <div class="imp"><div class="i-n">67%</div><div class="i-l">Near-miss event drop</div></div>
+            <div class="imp"><div class="i-n">420→85</div><div class="i-l">Top clinical RPN</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ CLIENTS + TESTIMONIALS ══ -->
+<div class="sec" id="clients">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Trusted By</div>
+      <div class="sec-title">Our clients</div>
+      <div class="sec-sub">Organisations across manufacturing, pharma, IT services, and healthcare.</div>
+    </div>
+  </div>
+<!-- Clients marquee — infinite scroll, pauses on hover -->
+<div class="clients-marquee-wrap">
+  <div class="clients-marquee-track">
+    <!-- First set -->
+    <div class="cl-tile-m"><img src="chowgule2-converted-from-png.svg" class="cl-logo"><div class="cl-n">Chowgule SBD</div></div>
+    <div class="cl-tile-m"><img src="logo-converted-from-png.svg" class="cl-logo"><div class="cl-n">Cloude2scale</div></div>
+    <div class="cl-tile-m"><img src="juno_logo_1024x1024-converted-from-webp.svg" class="cl-logo"><div class="cl-n">Juno School</div></div>
+    <div class="cl-tile-m"><img src="template_photo_1.svg" class="cl-logo"><div class="cl-n">Paragon Tapes</div></div>
+    <div class="cl-tile-m"><img src="61389611a332e4a1a396414e_Turbotech-logo-p-500-converted-from-png.svg" class="cl-logo"><div class="cl-n">Turbotech Precision</div></div>
+    <div class="cl-tile-m"><img src="cii-logoNew-converted-from-png.svg" class="cl-logo"><div class="cl-n">CII</div></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="cl-tile-m"><img src="chowgule2-converted-from-png.svg" class="cl-logo"><div class="cl-n">Chowgule SBD</div></div>
+    <div class="cl-tile-m"><img src="logo-converted-from-png.svg" class="cl-logo"><div class="cl-n">Cloude2scale</div></div>
+    <div class="cl-tile-m"><img src="juno_logo_1024x1024-converted-from-webp.svg" class="cl-logo"><div class="cl-n">Juno School</div></div>
+    <div class="cl-tile-m"><img src="template_photo_1.svg" class="cl-logo"><div class="cl-n">Paragon Tapes</div></div>
+    <div class="cl-tile-m"><img src="61389611a332e4a1a396414e_Turbotech-logo-p-500-converted-from-png.svg" class="cl-logo"><div class="cl-n">Turbotech Precision</div></div>
+    <div class="cl-tile-m"><img src="cii-logoNew-converted-from-png.svg" class="cl-logo"><div class="cl-n">CII</div></div>
+  </div>
+</div>
+<p class="cl-note">Trusted by leading organisations across industries.</p>
+  
+
+  
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ GALLERY ══ -->
+<div class="sec alt" id="gallery">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Gallery</div>
+      <div class="sec-title">Our work in action</div>
+      <div class="sec-sub">
+        A visual glimpse into our training sessions, consulting engagements, and client interactions.
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-scroll">
+  <button class="gallery-item" type="button" data-full="images/gallery1.jpg" aria-label="Open gallery image 1"><img src="images/gallery1.jpg" alt="Seeds Consulting Group gallery image 1"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery2.jpeg" aria-label="Open gallery image 2"><img src="images/gallery2.jpeg" alt="Seeds Consulting Group gallery image 2"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery3.jpeg" aria-label="Open gallery image 3"><img src="images/gallery3.jpeg" alt="Seeds Consulting Group gallery image 3"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery4.jpeg" aria-label="Open gallery image 4"><img src="images/gallery4.jpeg" alt="Seeds Consulting Group gallery image 4"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery5.jpeg" aria-label="Open gallery image 5"><img src="images/gallery5.jpeg" alt="Seeds Consulting Group gallery image 5"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery6.jpeg" aria-label="Open gallery image 6"><img src="images/gallery6.jpeg" alt="Seeds Consulting Group gallery image 6"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery7.jpeg" aria-label="Open gallery image 7"><img src="images/gallery7.jpeg" alt="Seeds Consulting Group gallery image 7"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery8.jpeg" aria-label="Open gallery image 8"><img src="images/gallery8.jpeg" alt="Seeds Consulting Group gallery image 8"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery9.jpeg" aria-label="Open gallery image 9"><img src="images/gallery9.jpeg" alt="Seeds Consulting Group gallery image 9"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery10.jpg" aria-label="Open gallery image 10"><img src="images/gallery10.jpg" alt="Seeds Consulting Group gallery image 10"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery11.jpg" aria-label="Open gallery image 11"><img src="images/gallery11.jpg" alt="Seeds Consulting Group gallery image 11"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery12.jpeg" aria-label="Open gallery image 12"><img src="images/gallery12.jpeg" alt="Seeds Consulting Group gallery image 12"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery13.jpeg" aria-label="Open gallery image 13"><img src="images/gallery13.jpeg" alt="Seeds Consulting Group gallery image 13"></button>
+  <button class="gallery-item" type="button" data-full="images/gallery14.jpg" aria-label="Open gallery image 14"><img src="images/gallery14.jpg" alt="Seeds Consulting Group gallery image 14"></button>
+  </div>
+</div>
+
+<div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+  <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Expanded gallery image">
+    <button class="gallery-close" type="button" id="gallery-close" aria-label="Close image viewer">&times;</button>
+    <img id="gallery-lightbox-image" src="" alt="Expanded gallery view">
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div class="sec" id="contact">
+  <div class="sec-head">
+    <div class="sec-bar"></div>
+    <div>
+      <div class="sec-tag">Get In Touch</div>
+      <div class="sec-title">Contact us</div>
+      <div class="sec-sub">Reach out for training enrolments, consulting enquiries, or corporate programs.</div>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div class="ci-list">
+      <div class="ci-item"><div class="ci-ico">📍</div><div><strong>Office</strong><span>5BM-248, HRBR Layout, 2nd Block, Kalyan Nagar, Near Banaswadi Police Station, Bangalore 560043</span></div></div>
+      <div class="ci-item"><div class="ci-ico">📞</div><div><strong>Phone</strong><span id="phone-display">+91 99001 61782</span></div></div>
+      <div class="ci-item"><div class="ci-ico">✉️</div><div><strong>Email</strong><span>raghuram@seedscg.com</span></div></div>
+      <div class="ci-item"><div class="ci-ico">🕐</div><div><strong>Hours</strong><span>Monday – Saturday, 9:00 AM – 5:00 PM IST</span></div></div>
+      <div class="c-note"><p>Consulting enquiry?</p><span>Share your challenge and we'll respond within 24 hours with a tailored approach.</span></div>
+    </div>
+    <form class="form" id="contact-form" action="https://formspree.io/f/maqvwwqy" method="POST">
+       <input type="hidden" name="_replyto" id="replyto">
+       <script>
+document.getElementById("contact-form").addEventListener("submit", function(){
+  document.getElementById("replyto").value = document.getElementById("email").value;
+});
+</script>
+      <div class="frow">
+        <div class="ff"><label for="name">Name <span class="req">*</span></label><input id="name" name="name" type="text" placeholder="Your name" required minlength="3" data-error="Please enter your full name."><div class="field-error"></div></div>
+        <div class="ff"><label for="company">Company <span class="req">*</span></label><input id="company" name="company" type="text" placeholder="Company name" required minlength="3" data-error="Please enter the full company name."><div class="field-error"></div></div>
+      </div>
+      <div class="frow">
+        <div class="ff"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" placeholder="you@company.com" required data-error="Please enter a complete email address."><div class="field-error"></div></div>
+        <div class="ff"><label for="phone">Phone <span class="req">*</span></label><input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required pattern="^\+?[0-9\s-]{10,15}$" data-error="Please enter the full phone number."><div class="field-error"></div></div>
+      </div>
+      <div class="ff">
+        <label for="interest">I'm interested in <span class="req">*</span></label>
+        <select id="interest" name="interest" required data-error="Please choose one service.">
+          <option>Lean Six Sigma Training (Belt Program)</option>
+          <option>Quality Tools Training</option>
+          <option>Reliability & Statistics Training</option>
+          <option>Soft Skills & Leadership Development</option>
+          <option>Operations Consulting</option>
+          <option>Strategic Excellence Consulting</option>
+          <option>Project Management</option>
+          <option>Custom / Corporate Engagement</option>
+        </select>
+        <div class="field-error"></div>
+      </div>
+      <div class="ff"><label for="message">Message <span class="req">*</span></label><textarea id="message" name="message" placeholder="Tell us about your challenge or requirement..." required minlength="20" data-error="Please complete your message before sending."></textarea><div class="field-error"></div></div>
+      <button class="s-btn" id="sbtn" type="submit">Send message</button>
+      <button class="wa-btn" type="button" onclick="window.open('https://wa.me/919900161782','_blank')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.76.463 3.41 1.27 4.842L2 22l5.278-1.243A9.951 9.951 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.948 7.948 0 0 1-4.05-1.108l-.29-.172-3.13.737.752-3.058-.19-.314A7.961 7.961 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+        Chat on WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <div class="f-brand">
+    <div class="f-logo">
+      <img src="seedscg logo (2).svg" class="f-logo-img" alt="Seeds Consulting Group Logo">
+      <div class="f-ln">Seeds Consulting Group</div>
+    </div>
+    <p>Empowering organisations through integrated process excellence and human capability development. Bangalore, India.</p>
+    <p class="f-tagline">"Chase Perfection… Attain Excellence"</p>
+  </div>
+  <div>
+    <h4>Consulting</h4>
+    <ul>
+      <li><a onclick="goTo('consulting')">Operations excellence</a></li>
+      <li><a onclick="goTo('consulting')">Strategic excellence</a></li>
+      <li><a onclick="goTo('consulting')">Design excellence</a></li>
+      <li><a onclick="goTo('consulting')">People excellence</a></li>
+      <li><a onclick="goTo('consulting')">Project management</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Training</h4>
+    <ul>
+      <li><a onclick="goTo('training')">Lean Six Sigma</a></li>
+      <li><a onclick="goTo('training')">Quality tools</a></li>
+      <li><a onclick="goTo('training')">Reliability & statistics</a></li>
+      <li><a onclick="goTo('training')">Soft skills & leadership</a></li>
+      <li><a onclick="goTo('gallery')">Gallery highlights</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Company</h4>
+    <ul>
+      <li><a onclick="goTo('about')">Our story</a></li>
+      <li><a onclick="goTo('founder')">The founder</a></li>
+      <li><a onclick="goTo('casestudies')">Case studies</a></li>
+      <li><a onclick="goTo('gallery')">Gallery</a></li>
+      <li><a onclick="goTo('contact')">Contact us</a></li>
+    </ul>
+  </div>
+</div>
+<div class="footer-bottom">
+  <span>© 2025 Seeds Consulting Group. All rights reserved.</span>
+  <span>Bangalore, India · contact@seedscg.com</span>
+</div>
+
+</div><!-- end .page -->
+
+<script>
+/* ── Navigation ── */
+function goTo(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const map={about:'About',consulting:'Consulting',training:'Training',casestudies:'Case Studies',clients:'Clients',gallery:'Gallery'};
+  document.querySelectorAll('.nav-links a').forEach(a=>{if(a.textContent.trim()===(map[id]||''))a.classList.add('active')});
+}
+function toggleCase(id){
+  const body=document.getElementById(id);
+  const btn=document.getElementById(id+'-btn');
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.case-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.toggle-btn').forEach(b=>b.textContent='Read full case study ↓');
+  if(!isOpen){body.classList.add('open');btn.textContent='Close ↑'}
+}
+
+const galleryLightbox=document.getElementById('gallery-lightbox');
+const galleryLightboxImage=document.getElementById('gallery-lightbox-image');
+const galleryClose=document.getElementById('gallery-close');
+document.querySelectorAll('.gallery-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const full=item.getAttribute('data-full');
+    const img=item.querySelector('img');
+    galleryLightboxImage.src=full;
+    galleryLightboxImage.alt=img ? img.alt : 'Expanded gallery image';
+    galleryLightbox.classList.add('open');
+    galleryLightbox.setAttribute('aria-hidden','false');
+  });
+});
+function closeGalleryLightbox(){
+  galleryLightbox.classList.remove('open');
+  galleryLightbox.setAttribute('aria-hidden','true');
+  galleryLightboxImage.src='';
+}
+galleryClose.addEventListener('click',closeGalleryLightbox);
+galleryLightbox.addEventListener('click',e=>{
+  if(e.target===galleryLightbox) closeGalleryLightbox();
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&galleryLightbox.classList.contains('open')) closeGalleryLightbox();
+});
+
+const contactForm=document.getElementById('contact-form');
+const submitBtn=document.getElementById('sbtn');
+const fields=[...contactForm.querySelectorAll('input, select, textarea')];
+function validateField(field, showError){
+  const wrapper=field.closest('.ff');
+  const errorEl=wrapper ? wrapper.querySelector('.field-error') : null;
+  const value=field.value.trim();
+  let message='';
+
+  if(field.tagName==='SELECT'&&value===''){
+    message=field.getAttribute('data-error')||'Please choose an option.';
+  }else if(field.required&&value===''){
+    message=field.getAttribute('data-error')||'This field is required.';
+  }else if(field.type==='email'&&field.validity.typeMismatch){
+    message=field.getAttribute('data-error')||'Please enter a valid email address.';
+  }else if(field.hasAttribute('pattern')&&value!==''&&!field.validity.valid){
+    message=field.getAttribute('data-error')||'Please complete this field.';
+  }else if(field.hasAttribute('minlength')&&value.length>0&&value.length<Number(field.getAttribute('minlength'))){
+    message=field.getAttribute('data-error')||'Please complete this field.';
+  }
+
+  if(wrapper){
+    wrapper.classList.toggle('invalid',showError&&message!=='');
+  }
+  if(errorEl){
+    errorEl.textContent=showError ? message : '';
+  }
+  return message==='';
+}
+function updateSubmitState(){
+  const ready=fields.every(field=>validateField(field,false));
+  submitBtn.disabled=!ready;
+}
+fields.forEach(field=>{
+  field.addEventListener('input',()=>{
+    validateField(field,field.dataset.touched==='true');
+    updateSubmitState();
+  });
+  field.addEventListener('blur',()=>{
+    field.dataset.touched='true';
+    validateField(field,true);
+    updateSubmitState();
+  });
+});
+
+contactForm.addEventListener('submit',e=>{
+  let allValid=true;
+
+  fields.forEach(field=>{
+    field.dataset.touched='true';
+    if(!validateField(field,true)) allValid=false;
+  });
+
+  updateSubmitState();
+
+  if(!allValid){
+    e.preventDefault(); // stop ONLY if invalid
+    return;
+  }
+
+  // DO NOTHING HERE
+  // let form submit normally to Formspree
+});   
+   
+updateSubmitState();
+
+/* ══════════════════════════════
+   CUSTOM CURSOR
+   ══════════════════════════════ */
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+const trail = document.getElementById('cursor-trail');
+const tCtx = trail.getContext('2d');
+let W,H;
+function rsz(){W=trail.width=window.innerWidth;H=trail.height=window.innerHeight}
+rsz(); window.addEventListener('resize',rsz);
+
+let mx=0,my=0,rx=0,ry=0;
+const pts=[];
+
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  dot.style.left=mx+'px'; dot.style.top=my+'px';
+  pts.push({x:mx,y:my,t:Date.now()});
+  if(pts.length>18) pts.shift();
+});
+
+(function loop(){
+  // ring — fast lerp
+  rx+=(mx-rx)*.35; ry+=(my-ry)*.35;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+
+  // trail — fade old points quickly (60ms lifespan)
+  tCtx.clearRect(0,0,W,H);
+  const now=Date.now();
+  const LIFE=60;
+  for(let i=1;i<pts.length;i++){
+    const age=now-pts[i].t;
+    if(age>LIFE) continue;
+    const alpha=(1-age/LIFE)*0.45;
+    const width=(1-age/LIFE)*2.5;
+    tCtx.beginPath();
+    tCtx.moveTo(pts[i-1].x,pts[i-1].y);
+    tCtx.lineTo(pts[i].x,pts[i].y);
+    tCtx.strokeStyle=`rgba(45,106,79,${alpha})`;
+    tCtx.lineWidth=width;
+    tCtx.lineCap='round';
+    tCtx.stroke();
+  }
+  requestAnimationFrame(loop);
+})();
+
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{dot.classList.add('hovered');ring.classList.add('hovered')});
+  el.addEventListener('mouseleave',()=>{dot.classList.remove('hovered');ring.classList.remove('hovered')});
+});
+
+/* ══════════════════════════════
+   SCROLL REVEAL (IntersectionObserver)
+   ══════════════════════════════ */
+const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.12});
+revealEls.forEach(el=>observer.observe(el));
+
+/* ══════════════════════════════
+   STAT COUNT-UP
+   ══════════════════════════════ */
+function countUp(el, target, suffix=''){
+  const num = parseInt(target);
+  let start=0;
+  const step=Math.ceil(num/40);
+  el.classList.add('counting');
+  const iv=setInterval(()=>{
+    start=Math.min(start+step,num);
+    el.textContent=start+suffix;
+    if(start>=num) clearInterval(iv);
+  },28);
+}
+const statObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const sNums=e.target.querySelectorAll('.s-num');
+      sNums.forEach(n=>{
+        const txt=n.textContent.trim();
+        if(txt==='22+') countUp(n,22,'+');
+        else if(txt==='2000+') countUp(n,2000,'+');
+        else if(txt==='40+') countUp(n,40,'+');
+      });
+      statObserver.unobserve(e.target);
+    }
+  });
+},{threshold:0.5});
+const heroStats=document.querySelector('.hero-stats');
+if(heroStats) statObserver.observe(heroStats);
+
+/* ══════════════════════════════
+   NAV ACTIVE ON SCROLL
+   ══════════════════════════════ */
+const sections=['about','consulting','training','casestudies','clients','gallery','contact'];
+const navMap={about:'About',consulting:'Consulting',training:'Training',casestudies:'Case Studies',clients:'Clients',gallery:'Gallery'};
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&window.scrollY>=el.offsetTop-100) current=id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.classList.toggle('active',a.textContent.trim()===(navMap[current]||''));
+  });
+},{passive:true});
+</script>
+
+</body>
+</html>
